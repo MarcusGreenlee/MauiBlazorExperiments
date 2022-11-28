@@ -1,0 +1,26 @@
+﻿@page "/counter"
+@using Microsoft.Extensions.Logging
+@using Microsoft.Maui.Storage
+@using Serilog
+@inject ILogger<Counter> logger
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<p>Log file path = @pathStr</p>
+
+@code {
+    private int currentCount = 0;
+    private string pathStr = FileSystem.Current.AppDataDirectory;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+
+        logger.LogInformation("Counter.razor.IncrementCount() executed. Logged via @inject");
+        Log.Information("Counter.razor.IncrementCount() executed. Logged Log");
+    }
+}

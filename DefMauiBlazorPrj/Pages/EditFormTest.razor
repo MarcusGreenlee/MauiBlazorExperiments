@@ -1,0 +1,29 @@
+﻿@page "/EditFormTest"
+
+@* From https://learn.microsoft.com/en-us/aspnet/core/blazor/forms-and-input-components?view=aspnetcore-7.0 *@
+
+@using Microsoft.Extensions.Logging
+@inject ILogger<EditFormTest> Logger
+
+<h3>Edit Form Test</h3>
+
+<EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="exampleModel.Name" />
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+
+    private ExampleModel exampleModel = new();
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+
+        // Process the valid form
+    }
+
+}
