@@ -89,7 +89,7 @@ namespace DefMauiBlazorPrj
 		    builder.Services.AddBlazorWebViewDeveloperTools();
 
 #endif
-            // TODO - unembed appsettings.json
+            // ToDo - unembed appsettings.json
             /* As of 11/25/2022 .NET MAUI Blazor apps can't access appsettings.json.  This looks like something that 
              * was in the previews but then removed.  I am leaving this in here until I find another way to add
              * logging in the hope that I'll do an update and this will be something that works again.

@@ -1,7 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DefMauiPrj.MainPage">
+﻿From MainPage.xaml
 
     <ScrollView>
         <VerticalStackLayout
@@ -38,5 +35,17 @@
         </VerticalStackLayout>
     </ScrollView>
 
+    From MainPage.xaml.cs
 
-</ContentPage>
+    
+        private void OnCounterClicked(object sender, EventArgs e)
+        {
+            count++;
+
+            if (count == 1)
+                CounterBtn.Text = $"Clicked {count} time";
+            else
+                CounterBtn.Text = $"Clicked {count} times";
+
+            SemanticScreenReader.Announce(CounterBtn.Text);
+        }
